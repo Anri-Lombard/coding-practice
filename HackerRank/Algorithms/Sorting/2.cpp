@@ -11,5 +11,15 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
 
-    
+    int a=0, v, n, idx=-1;
+    cin >> v >> n;
+    vi arr(n);
+
+    Inc(a, n) 
+        cin >> arr[i];
+
+    Inc(a, n) {
+        idx++;
+        if (arr[i] == v) cout << idx << '\n';
+    }
 }

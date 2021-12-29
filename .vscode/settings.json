@@ -4,7 +4,12 @@
         "iostream": "cpp",
         "valarray": "cpp",
         "deque": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "barrier": "cpp",
+        "chrono": "cpp",
+        "latch": "cpp",
+        "limits": "cpp",
+        "semaphore": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

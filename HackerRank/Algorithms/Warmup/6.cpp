@@ -13,7 +13,7 @@ void plusMinus(vector<int> arr) {
 
     int den = arr.size();
     cout << setprecision(6) << fixed;
-    cout << pos/den << " " << neg/den << " " << zero/den;
+    cout << pos/den << "\n" << neg/den << "\n" << zero/den;
 }
 
 int main() {

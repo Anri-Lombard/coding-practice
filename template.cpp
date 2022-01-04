@@ -3,6 +3,7 @@
 #define Inc(a, b) for (int i=a; i<b; i++)
 #define Dec(a, b) for (int i=b-1; i>-1; i--)
 #define vi vector<int>
+#define vl vector<long>
 
 using namespace std;
 

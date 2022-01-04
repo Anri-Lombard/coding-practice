@@ -9,7 +9,9 @@
         "chrono": "cpp",
         "latch": "cpp",
         "limits": "cpp",
-        "semaphore": "cpp"
+        "semaphore": "cpp",
+        "string_view": "cpp",
+        "string": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

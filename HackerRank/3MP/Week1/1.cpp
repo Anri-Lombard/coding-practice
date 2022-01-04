@@ -15,7 +15,7 @@ int main() {
     cin >> n;
 
     // O(n)
-    int neg=0, neu=0, pos=0;
+    float neg=0, neu=0, pos=0;
     vector<int> arr(n);
 
     for (int i=0; i<n; i++)
@@ -27,10 +27,11 @@ int main() {
         else if (arr[i] > 0)
             pos += 1;
         else
-            neu += 1
+            neu += 1;
     }
 
-    cout << setprecision(6) << "\n";
-    cout << pos
+
+    cout << setprecision(6);
+    cout << pos/n << "\n" << neg/n << "\n" << neu/n << '\n';
 
 }

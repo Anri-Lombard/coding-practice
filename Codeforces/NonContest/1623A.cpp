@@ -15,5 +15,16 @@ int main() {
     int num;
     cin >> num;
 
+    int n, m, rb, cb, rd, cd;
+    cin >> n >> m >> rb >> cb >> rd >> cd;
+
+    // robot = b, cleaner = d
+    // O(n^2)
+    Inc(0, n, row){
+        Inc(0,m, column){
+            if (row)
+        }
+    }
+
     
 }

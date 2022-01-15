@@ -27,7 +27,7 @@ int main() {
     
     newFormat = hour + ":" + min + ":" + sec;
 
-    cout << hour << " " << min << " " << sec << " " << TIME << "\n";
+    // cout << hour << " " << min << " " << sec << " " << TIME << "\n";
     
     cout << newFormat << "\n";
 }

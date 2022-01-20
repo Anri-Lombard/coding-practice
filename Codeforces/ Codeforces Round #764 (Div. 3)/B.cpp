@@ -49,9 +49,29 @@ void __f (const char* names, Arg1&& arg1, Args&&... args)
 const int N = 200005;
 
 void solve() {
-	int n, m;
-	cin >> n >> m;
-	bug(n, m);
+	int a, b, c;
+	cin >> a >> b >> c;
+
+	int new_a = b - (c - b);
+	if (new_a >= a && new_a % a == 0 && new_a != 0) {
+		cout << "YES" << endl;
+		return;
+	}
+
+	int new_b = a + (c - a)/2;
+    if(new_b >= b && (c-a)%2 == 0 && new_b % b == 0 && new_b != 0) {
+        cout << "YES\n";
+        return;
+    }
+
+    int new_c = a + 2*(b - a);
+    if(new_c >= c && new_c % c == 0 && new_c != 0) {
+        cout << "YES\n";
+        return;
+    }
+
+    cout << "NO" <<endl;
+    return;
 }
 
 int32_t main()
@@ -66,7 +86,7 @@ int32_t main()
 	clock_t z = clock();
 
 	int t = 1;
-	// cin >> t;
+	cin >> t;
 	while (t--) solve();
 
 	cerr << "Run Time : " << ((double)(clock() - z) / CLOCKS_PER_SEC);

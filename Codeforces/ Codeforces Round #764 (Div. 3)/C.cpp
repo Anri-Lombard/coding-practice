@@ -49,9 +49,27 @@ void __f (const char* names, Arg1&& arg1, Args&&... args)
 const int N = 200005;
 
 void solve() {
-	int n, m;
-	cin >> n >> m;
-	bug(n, m);
+	int n; cin >> n;
+	vi arr(n), used(n+1, false);
+
+	for (auto &i: arr) {
+		cin >> i;
+	}
+
+	sort(arr.begin(), arr.end(), [] (int a, int b) {
+        return a > b;
+    });
+
+    bool ok = true;
+
+    for (auto &i: arr) {
+    	int x = i;
+    	while(x > n || used[x]) x/=2;
+    	if (x>0) used[x]=true;
+    	else ok = false;
+    }
+
+    cout << (ok ? "YES" : "NO") << endl;
 }
 
 int32_t main()
@@ -66,7 +84,7 @@ int32_t main()
 	clock_t z = clock();
 
 	int t = 1;
-	// cin >> t;
+	cin >> t;
 	while (t--) solve();
 
 	cerr << "Run Time : " << ((double)(clock() - z) / CLOCKS_PER_SEC);

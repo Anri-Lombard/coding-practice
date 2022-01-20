@@ -49,9 +49,24 @@ void __f (const char* names, Arg1&& arg1, Args&&... args)
 const int N = 200005;
 
 void solve() {
-	int n, m;
-	cin >> n >> m;
-	bug(n, m);
+	int n, k;
+    string s;
+    cin >> n >> k >> s;
+    vector<int> cnt(26);
+    for (char c : s) {
+        cnt[c - 'a']++;
+    }
+    int cntPairs = 0, cntOdd = 0;
+    for (int c : cnt) {
+        cntPairs += c / 2;
+        cntOdd += c % 2;
+    }
+    int ans = 2 * (cntPairs / k);
+    cntOdd += 2 * (cntPairs % k);
+    if (cntOdd >= k) {
+        ans++;
+    }
+    cout << ans << '\n';
 }
 
 int32_t main()
@@ -66,7 +81,7 @@ int32_t main()
 	clock_t z = clock();
 
 	int t = 1;
-	// cin >> t;
+	cin >> t;
 	while (t--) solve();
 
 	cerr << "Run Time : " << ((double)(clock() - z) / CLOCKS_PER_SEC);

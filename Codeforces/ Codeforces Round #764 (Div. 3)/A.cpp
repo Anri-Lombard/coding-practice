@@ -49,9 +49,24 @@ void __f (const char* names, Arg1&& arg1, Args&&... args)
 const int N = 200005;
 
 void solve() {
-	int n, m;
-	cin >> n >> m;
-	bug(n, m);
+	int n; cin >> n;
+	vi arr(n);
+
+	int MIN = INT_MAX;
+    int MAX = INT_MIN;
+
+	for (int i = 0; i < n; ++i)
+	{
+		cin >> arr[i];
+	}
+
+	for (int i = 0; i < n; ++i)
+	{
+		MIN = min(MIN, arr[i]);
+		MAX = max(MAX, arr[i]);
+	}
+
+	cout << MAX - MIN << endl;
 }
 
 int32_t main()
@@ -66,7 +81,7 @@ int32_t main()
 	clock_t z = clock();
 
 	int t = 1;
-	// cin >> t;
+	cin >> t;
 	while (t--) solve();
 
 	cerr << "Run Time : " << ((double)(clock() - z) / CLOCKS_PER_SEC);

@@ -21,17 +21,36 @@
  * }
  */
 class BSTIterator {
+    private Stack<TreeNode> stack = null;
 
     public BSTIterator(TreeNode root) {
-        
+        this.stack = new Stack<TreeNode>();
+
+        while(root != null) {
+            this.stack.push(root);
+            root = root.left;
+        }
     }
     
+    /**@return next smallest element */
     public int next() {
-        
+        TreeNode a = this.stack.pop();
+
+        if (a.right != null) {
+            this.stack.push(a.right);
+
+            TreeNode b = a.right.left;
+            while (b != null) {
+                this.stack.push(b);
+                b = b.left;
+            }
+        }
+        return a.val;
     }
     
+    /**@return if we have a next smallest element */
     public boolean hasNext() {
-        
+        return !this.stack.isEmpty();
     }
 }
 

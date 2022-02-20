@@ -6,74 +6,27 @@
 
 // @lc code=start
 class MyHashSet {
+    /**
+     * Time: O(1)
+     * Space: O(N)
+     */
 
-    private int size;
-    private TreeNode[] nodes;
+    private boolean[] arr;
 
     public MyHashSet() {
-        this.size = 100;
-        this.nodes = new TreeNode[size];
+        this.arr = new boolean[1000001];
     }
     
     public void add(int key) {
-        int index = key % this.size;
-
-        if (this.nodes[index] == null) {
-            this.nodes[index] = new TreeNode(key);
-            return;
-        } else {
-            TreeNode p = this.nodes[index];
-            while (p != null && p.val != key) {
-                p = p.next();
-            }
-
-            if (p != null) {
-                return;
-            }
-
-            TreeNode newHead = new TreeNode(key);
-            newHead.next = this.nodes[index];
-            this.nodes[index] = newHead;
-        }
+        arr[key] = true;
     }
     
     public void remove(int key) {
-        int index = key % this.size;
-
-        if (this.nodes[index] == null)
-            return;
-        else {
-            TreeNode p = this.nodes[index];
-
-            if (p.val == key) {
-                this.nodes[index] = p.next();
-                return;
-            }
-
-            while (p.next != null && p.next.val != key) {
-                p = p.next();
-            }
-            if (p.next == null)
-                return;
-            
-            p.next = p.next.next;
-        }
-        
+        arr[key] = false;
     }
     
     public boolean contains(int key) {
-        int index = key % this.size;
-
-        if (this.nodes[index] == null) {
-            return false;
-        }
-
-        TreeNode p = this.nodes[index];
-        while (p != null && p.val != key) {
-            p = p.next;
-        }
-
-        return p != null;
+        return arr[key];
     }
 }
 
